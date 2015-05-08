@@ -9,25 +9,20 @@ sources:
     #  url: https://db.tt/VcyI9dvr
 
   git:
-    - name: 'ubunut'
-      repo: 'https://github.com/spencergibb/ansible-osx'
+    - name: 'ubunutu'
+      repo: 'https://github.com/NeuromaticSystems/ansible-ubuntu.git'
       playbooks:
-         #- adium.yml
-         #- alfred.yml
-         #- better-touch-tool.yml
-         #- chrome-beta.yml
+         #- pip.yml
+         #- Development.yml
+         #- conf_and_bin.yml
+         #- mackup.yml
          #- dropbox.yml
-         #- github.yml
          #- gitx.yml
          #- intellij-idea-ultimate.yml
-         #- iterm2.yml
-         #- java7.yml
+         #- java8.yml
          #- libreoffice.yml
-         #- sequel-pro.yml
          #- skype.yml
-         #- truecrypt.yml
-         #- usb-overdrive.yml
          #- vagrant.yml
          #- virtualbox.yml
-         #- xtra-finder.yml
+
 # EOF ###########################################################################
