@@ -1,7 +1,7 @@
 ---
--host: workstation
+- hosts: workstation
  
- tasks:
+  tasks:
    - name: 'install programs'
      action: apt pkg=$item state=present
       with_items:
