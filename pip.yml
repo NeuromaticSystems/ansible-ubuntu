@@ -15,7 +15,7 @@
           - awscli
           - virtualenv
           - virtualenvwrapper
-          - bpython
+          #- bpython
           - thefuck
           - flake8
           - pythong
