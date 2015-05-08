@@ -5,12 +5,12 @@
    - name: 'install programs'
      action: apt pkg=$item state=present
       with_items:
-        - build-essential
-        - curl
-        - git-core
-        - sqlite3
-        - autoconf
-        - automake
-        - git
-        - aptitude
-        - vim
+       - build-essential
+       - curl
+       - git-core
+       - sqlite3
+       - autoconf
+       - automake
+       - git
+       - aptitude
+       - vim
