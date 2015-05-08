@@ -9,7 +9,7 @@ sources:
     #  url: https://db.tt/VcyI9dvr
 
   git:
-    - name: 'osx'
+    - name: 'ubunut'
       repo: 'https://github.com/spencergibb/ansible-osx'
       playbooks:
          #- adium.yml
