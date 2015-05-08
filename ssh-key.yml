@@ -1,5 +1,6 @@
 ##################################################
 # http://docs.ansible.com/user_module.html
+# https://unix.stackexchange.com/questions/136894/command-line-method-or-programtically-add-ssh-key-to-github-com-user-account
 ---
 - hosts: workstation
 
