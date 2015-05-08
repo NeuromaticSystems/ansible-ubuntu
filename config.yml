@@ -13,6 +13,7 @@ sources:
       repo: 'https://github.com/NeuromaticSystems/ansible-ubuntu.git'
       playbooks:
          - pip.yml
+         - ssh-key.yml
          #- Development.yml
          #- conf_and_bin.yml
          #- mackup.yml
