@@ -13,4 +13,28 @@
           - virtualenvwrapper
           - pyyaml
           - awscli
-
+          - virtualenv
+          - virtualenvwrapper
+          - bpython
+          - thefuck
+          - flake8
+          - pythong
+          #- Fabric
+          #- Flask
+          #- Jinja2
+          #- SQLAlchemy
+          #- Sphinx
+          #- Werkzeug
+          #- boto
+          #- dulwich
+          #- hieroglyph
+          #- httpie
+          #- mercurial
+          #- passlib
+          #- pip-tools
+          #- psdash
+          #- psutil
+          #- requests
+          #- see
+          #- six
+          #- uWSGI
