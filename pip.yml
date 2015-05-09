@@ -16,6 +16,7 @@
           - virtualenv
           - virtualenvwrapper
           #- bpython
+          - mackup
           - thefuck
           - flake8
           - pythong
