@@ -14,3 +14,12 @@
       - git
       - aptitude
       - vim
+      - vim-addon-manager
+      - vim-gnome
+      - vim-gtk
+      - vim-scripts
+      - vim-youcompleteme 
+      - thunar-vcs-plugin
+      - xfce4-clipman
+      - shiki-colors-xfwm-theme 
+      
