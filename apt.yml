@@ -3,8 +3,13 @@
 
   tasks:
  
-   - name: 'Add dep keys'
+   - name: 'Add google dep keys'
      action: apt_key url='https://dl.google.com/linux/linux_signing_key.pub' state=present
+     with_items:
+        - 'http://keyserver.ubuntu.com'
+
+   - name: 'Add spotify dep keys'
+     action: apt_key url='http://keyserver.ubuntu.com' state=present id=94558F59
 
    - name: 'Add some depos'
      action: apt_repository repo='{{item}}'
@@ -13,9 +18,10 @@
        - ppa:webupd8team/sublime-text-3
        - ppa:webupd8team/themes
        - ppa:linrunner/tlp
+       - "deb http://repository.spotify.com stable non-free"
        
    - name: 'install programs'
-     action: apt pkg={{item}} state=present
+     action: apt pkg={{item}} state=present  update_cache=yes upgrade=yes
      with_items:
       - build-essential
       - curl
@@ -48,10 +54,16 @@
       - gitx
       - libreoffice
       - ffmpeg
+      - "https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb"
+      - "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
       
-      
-      
-#sudo /usr/share/doc/libdvdread4/install-css.sh
-#sudo tlp start
+  - name: 'Finish installing dcss'
+    sudo: yes
+    command: '/usr/share/doc/libdvdread4/install-css.sh'
+    
+  - name: 'Finish installing tlp'
+    sudo: yes
+    command: 'tlp start'
 
 
+# EOF ###########################################################
