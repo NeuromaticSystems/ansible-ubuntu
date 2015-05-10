@@ -17,14 +17,14 @@ sources:
          - ssh-key.yml
          #- Development.yml
          #- conf_and_bin.yml
+         #- pycharm
+         #- lastpass
          #- mackup.yml
          #- dropbox.yml
-         #- gitx.yml
          #- intellij-idea-ultimate.yml
-         #- java8.yml
-         #- libreoffice.yml
          #- skype.yml
          #- vagrant.yml
          #- virtualbox.yml
+         #- spideroak
 
 # EOF ###########################################################################
