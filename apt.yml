@@ -18,8 +18,11 @@
        - ppa:mc3man/trusty-media
        #- 'deb http://repository.spotify.com stable non-free'
        
+   - name: 'Updating apt caches'
+     action: apt update_cache=yes
+     
    - name: 'install programs apt'
-     action: apt name={{item}} state=present update_cache=yes
+     action: apt name='{{item}}'
      with_items:
       - build-essential
       - curl
