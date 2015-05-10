@@ -19,7 +19,7 @@
        #- 'deb http://repository.spotify.com stable non-free'
        
    - name: 'install programs apt'
-     action: apt pkg={{item}} state=present
+     action: apt name={{item}} state=present
      with_items:
       - build-essential
       - curl
