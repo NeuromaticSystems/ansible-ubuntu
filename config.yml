@@ -14,6 +14,7 @@ sources:
       playbooks:
          # ADD BACK BEFORE DOING FRESH INSTALL JUST DEBUGGING apt.yml- pip.yml
          - apt.yml
+         - java8.yml
          - ssh-key.yml
          #- Development.yml
          #- conf_and_bin.yml
