@@ -1,7 +1,77 @@
-# Create ~/Development/brianchoate
-# Create ~/Development/NeuromaticSystmes
+---
+- hosts: workstation
 
-# git clone bin
-# git clonse conf
-# ln -s bin conf vimrc gitconf ssh_conf
+  tasks:
+ 
+    - name: Create dirs
+      action: file path={{item}} state=directory
+      with_items:
+        - /home/andor/Development/
+        - /home/andor/Development/brianchoate
+        - /home/andor/Development/NeuromaticSystems
+        
+    - name: Checkout repos
+      action: git repo={{item.repo}} dest={{item.dest}} key_file=/home/andor/.ssh/id_rsa
+      with_items:
+        - repo: ssh://git@github.com:brianchoate/conf.git
+          dest: /home/andor/Development/brianchoate/conf
+        - repo: ssh://git@github.com:brianchoate/bin.git
+          dest: /home/andor/Development/brianchoate/bin
+        - repo: ssh://git@github.com:NeuromaticSystems/ansible-ubuntu.git
+          dest: /home/andor/Development/NeuromaticSystems/ansible-ubuntu
+        - repo: ssh://git@github.com:NeuromaticSystems/ansible-osx.git
+          dest: /home/andor/Development/NeuromaticSystems/ansible-osx
+        - repo: ssh://git@github.com:NeuromaticSystems/ansible-common.git
+          dest: /home/andor/Development/NeuromaticSystems/ansible-common
+        
+    - name: Make bash.d directory
+      action: file path=/home/andor/conf/bash.d/ state=directory
+      
+    - name: make links
+      action: file src={{item.from}} dest={{item.to}} state=link
+      sudo: no
+      with_items:
+        - from: /home/andor/Development/brianchoate/conf
+          to:   /home/andor/conf
+        - from: /home/andor/Development/brianchoate/bin
+          to:   /home/andor/bin
+        - from: /home/andor/conf/screenrc
+          to:   /home/andor/.screenrc
+        - from: /home/andor/conf/vimrc_amix_basic
+          to:   /home/andor/.vimrc
+        - from: /home/andor/conf/gitconf.personal
+          to:   /home/andor/.gitconf
+        - from: /home/andor/conf/bash/bash_profile_ux302a
+          to:   /home/andor/.bash_profile
+        - from: /home/andor/conf/bash.d-available/aliasrc
+          to:   /home/andor/conf/bash.d/aliasrc
+        - from: /home/andor/conf/bash.d-available/bash.rc
+          to:   /home/andor/conf/bash.d/bash.rc
+        - from: /home/andor/conf/bash.d-available/color-ls-linux.rc
+          to:   /home/andor/conf/bash.d/color-ls-linux.rc
+        - from: /home/andor/conf/bash.d-available/completion-ruby-all
+          to:   /home/andor/conf/bash.d/completion-ruby-all
+        - from: /home/andor/conf/bash.d-available/editor-vim.rc
+          to:   /home/andor/conf/bash.d/editor-vim.rc
+        - from: /home/andor/conf/bash.d-available/fuck.rc
+          to:   /home/andor/conf/bash.d/fuck.rc
+        - from: /home/andor/conf/bash.d-available/heroku.rc
+          to:   /home/andor/conf/bash.d/heroku.rc
+        - from: /home/andor/conf/bash.d-available/packer.rc
+          to:   /home/andor/conf/bash.d/packer.rc
+        - from: /home/andor/conf/bash.d-available/pycharm.rc
+          to:   /home/andor/conf/bash.d/pycharm.rc
+        - from: /home/andor/conf/bash.d-available/ssh.rc
+          to:   /home/andor/conf/bash.d/ssh.rc
+        - from: /home/andor/conf/bash.d-available/virtualenvwrapper.rc
+          to:   /home/andor/conf/bash.d/virtualenvwrapper.rc
+        - from: /home/andor/conf/bash.d-available/
+          to:   /home/andor/conf/bash.d/powerline-shell.rc
 
+#    - name: create homdir symlinks
+#      file: src={{item.from}} dest={{item.to}} state=link
+#      sudo: no
+#      with_items:
+#         # ~/Dropbox/ubuntu/* is now deprecated for Mackup and ~/Dropbox/Mackup
+#         - from: ~/Dropbox/mac/bin
+#           to: ~/bin
