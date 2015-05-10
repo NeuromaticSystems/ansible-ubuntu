@@ -12,6 +12,7 @@
         
     - name: Checkout repos
       action: git repo={{item.repo}} dest={{item.dest}} key_file=/home/andor/.ssh/id_rsa accept_hostkey=True
+      sudo: no
       with_items:
         - repo: ssh://git@github.com:brianchoate/conf.git
           dest: /home/andor/Development/brianchoate/conf
