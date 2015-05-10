@@ -16,6 +16,7 @@
        - ppa:webupd8team/sublime-text-3
        - ppa:webupd8team/themes
        - ppa:linrunner/tlp
+       - ppa:mc3man/trusty-media
        #- 'deb http://repository.spotify.com stable non-free'
        
    - name: 'install programs apt pkg'
