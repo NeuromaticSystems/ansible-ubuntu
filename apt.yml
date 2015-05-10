@@ -18,7 +18,7 @@
        - ppa:linrunner/tlp
        #- 'deb http://repository.spotify.com stable non-free'
        
-   - name: 'install programs'
+   - name: 'install programs apt pkg'
      action: apt pkg={{item}} state=present
      with_items:
       - build-essential
@@ -49,9 +49,13 @@
       #- spotify-client
       - htop
       - nmap
-      - gitx
+      #- gitx
       - libreoffice
       - ffmpeg
+    
+   - name: 'install programs from deb'
+     action: apt deb={{item}} state=present
+     with_items:    
       - 'https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
       - 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
       
