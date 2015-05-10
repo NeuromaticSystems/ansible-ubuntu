@@ -27,5 +27,6 @@ sources:
          #- vagrant.yml
          #- virtualbox.yml
          #- spideroak
+         #- https://github.com/Bash-it/bash-it
 
 # EOF ###########################################################################
