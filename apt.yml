@@ -1,5 +1,6 @@
 ---
 - hosts: workstation
+
  -tasks
    - name: 'Add dep keys'
      action: apt_key: url={{item}} state=present
