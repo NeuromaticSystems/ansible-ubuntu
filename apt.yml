@@ -7,7 +7,7 @@
      action: apt_key url='https://dl.google.com/linux/linux_signing_key.pub' state=present
 
    - name: 'Add spotify dep keys'
-     action: apt_key url='http://keyserver.ubuntu.com' state=present id='94558F59'
+     action: apt_key url='hkp://keyserver.ubuntu.com:80' state=present id='94558F59'
 
    - name: 'Add some depos'
      action: apt_repository repo='{{item}}'
