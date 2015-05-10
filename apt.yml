@@ -4,7 +4,7 @@
   tasks:
  
    - name: 'Add dep keys'
-     action: apt_key: url={{item}} state=present
+     action: apt_key: url='{{item}}' state=present
      with_items:
        - https://dl.google.com/linux/linux_signing_key.pub
  
