@@ -22,9 +22,6 @@
       action: apt update_cache=yes
      
     - name: 'install programs apt'
-      action: apt name='curl'
-     
-    - name: 'install programs apt'
       action: apt name='{{item}}'
       with_items:
         - build-essential
@@ -59,19 +56,19 @@
         - ffmpeg
     
     - name: Download Google Chrome
-      get_url: 
-      url="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-      dest="/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb"
+      action: get_url url='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+      dest='/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb'
 
     - name: Download Gooble Talk
-      get_url: 
-      url="https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb"
-      dest="/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb"
+      get_url url='https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
+      dest='/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb'
 
     - name: 'install Chrome from deb'
+      sudo: true
       action: apt deb='/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb' state=present
 
     - name: 'install Talk from deb'
+      sudo: true
       action: apt deb='/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb' state=present
       
     - name: 'Finish installing dcss'
