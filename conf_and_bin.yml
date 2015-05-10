@@ -11,7 +11,7 @@
         - /home/andor/Development/NeuromaticSystems
         
     - name: Checkout repos
-      action: git repo={{item.repo}} dest={{item.dest}} key_file=/home/andor/.ssh/id_rsa
+      action: git repo={{item.repo}} dest={{item.dest}} key_file=/home/andor/.ssh/id_rsa accept_hostkey=True
       with_items:
         - repo: ssh://git@github.com:brianchoate/conf.git
           dest: /home/andor/Development/brianchoate/conf
