@@ -1,6 +1,11 @@
 ---
 - hosts: workstation
  -tasks
+   - name: 'Add dep keys'
+     action: apt_key: url={{item}} state=present
+     with_items:
+       - https://dl.google.com/linux/linux_signing_key.pub
+ 
    - name: 'Add some depos'
      action: apt_repository: repo='{{item}}'
      with_itmes:
@@ -38,5 +43,14 @@
       - tlp
       - tlp-rdw
       - spotify-client
+      - htop
+      - nmap
+      - gitx
+      - libreoffice
       
-/usr/share/doc/libdvdread4/install-css.sh
+      
+      
+#sudo /usr/share/doc/libdvdread4/install-css.sh
+#sudo tlp start
+
+
