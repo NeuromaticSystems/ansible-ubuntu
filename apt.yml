@@ -17,6 +17,8 @@
         - ppa:linrunner/tlp
         - ppa:mc3man/trusty-media
         #- 'deb http://repository.spotify.com stable non-free'
+        - 'deb http://archive.canonical.com/ubuntu trusty partner'
+        - 'deb-src http://archive.canonical.com/ubuntu trusty partner'
        
     - name: 'Updating apt caches'
       action: apt update_cache=yes
