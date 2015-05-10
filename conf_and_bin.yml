@@ -4,6 +4,7 @@
   tasks:
  
     - name: Create dirs
+      sudo: no
       action: file path={{item}} state=directory
       with_items:
         - /home/andor/Development/
@@ -26,6 +27,7 @@
           dest: /home/andor/Development/NeuromaticSystems/ansible-common
         
     - name: Make bash.d directory
+      sudo: no
       action: file path=/home/andor/conf/bash.d/ state=directory
       
     - name: make links
