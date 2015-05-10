@@ -18,7 +18,7 @@
        - ppa:mc3man/trusty-media
        #- 'deb http://repository.spotify.com stable non-free'
        
-   - name: 'install programs apt pkg'
+   - name: 'install programs apt'
      action: apt pkg={{item}} state=present
      with_items:
       - build-essential
