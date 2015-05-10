@@ -19,11 +19,11 @@
         #  dest: /home/andor/Development/brianchoate/conf
         #- repo: ssh://git@github.com:brianchoate/bin.git
         #  dest: /home/andor/Development/brianchoate/bin
-        #- repo: ssh://git@github.com:NeuromaticSystems/ansible-ubuntu.git
-        #  dest: /home/andor/Development/NeuromaticSystems/ansible-ubuntu
-        #- repo: ssh://git@github.com:NeuromaticSystems/ansible-osx.git
-        #  dest: /home/andor/Development/NeuromaticSystems/ansible-osx
-        - repo: ssh://git@github.com:NeuromaticSystems/ansible-common.git
+        - repo: https://github.com/NeuromaticSystems/ansible-ubuntu.git
+          dest: /home/andor/Development/NeuromaticSystems/ansible-ubuntu
+        - repo: https://github.com/NeuromaticSystems/ansible-osx.git
+          dest: /home/andor/Development/NeuromaticSystems/ansible-osx
+        - repo: https://github.com/NeuromaticSystems/ansible-common.git
           dest: /home/andor/Development/NeuromaticSystems/ansible-common
         
     - name: Make bash.d directory
