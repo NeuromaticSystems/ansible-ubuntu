@@ -13,11 +13,11 @@ sources:
       repo: 'https://github.com/NeuromaticSystems/ansible-ubuntu.git'
       playbooks:
          # ADD BACK BEFORE DOING FRESH INSTALL JUST DEBUGGING apt.yml- pip.yml
-         - apt.yml
+         # ADD BACK BEFORE DOING FRESH INSTALL JUST DEBUGGING apt.yml- apt.yml
          # ADD BACK BEFORE DOING FRESH INSTALL JUST DEBUGGING apt.yml- java8.yml
          # ADD BACK BEFORE DOING FRESH INSTALL JUST DEBUGGING apt.yml- ssh-key.yml
          #- Development.yml
-         #- conf_and_bin.yml
+         - conf_and_bin.yml
          #- pycharm
          #- lastpass
          #- mackup.yml
