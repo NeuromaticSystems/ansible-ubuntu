@@ -16,10 +16,10 @@
        - ppa:webupd8team/sublime-text-3
        - ppa:webupd8team/themes
        - ppa:linrunner/tlp
-       - 'deb http://repository.spotify.com stable non-free'
+       #- 'deb http://repository.spotify.com stable non-free'
        
    - name: 'install programs'
-     action: apt pkg={{item}} state=present  update_cache=yes upgrade=yes
+     action: apt pkg={{item}} state=present
      with_items:
       - build-essential
       - curl
@@ -52,16 +52,16 @@
       - gitx
       - libreoffice
       - ffmpeg
-      - 'https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
-      - 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+      #- 'https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
+      #- 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
       
-  - name: 'Finish installing dcss'
-    sudo: yes
-    command: '/usr/share/doc/libdvdread4/install-css.sh'
+   - name: 'Finish installing dcss'
+     sudo: yes
+     command: '/usr/share/doc/libdvdread4/install-css.sh'
     
-  - name: 'Finish installing tlp'
-    sudo: yes
-    command: 'tlp start'
+   - name: 'Finish installing tlp'
+     sudo: yes
+     command: 'tlp start'
 
 
 # EOF ###########################################################
