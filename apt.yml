@@ -55,6 +55,9 @@
         - libreoffice
         - ffmpeg
     
+    - name: Create download directory
+      action: file path='/home/{{ ansible_env.USER }}/Downloads/' state=directory
+      
     - name: Download Google Chrome
       action: 
         get_url 
