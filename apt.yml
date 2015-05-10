@@ -56,12 +56,16 @@
         - ffmpeg
     
     - name: Download Google Chrome
-      action: get_url url='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-      dest='/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb'
+      action: 
+        get_url 
+        url='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+        dest='/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb'
 
     - name: Download Gooble Talk
-      get_url url='https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
-      dest='/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb'
+      action: 
+        get_url 
+        url='https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
+        dest='/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb'
 
     - name: 'install Chrome from deb'
       sudo: true
