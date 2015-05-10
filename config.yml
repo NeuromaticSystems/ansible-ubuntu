@@ -12,7 +12,7 @@ sources:
     - name: 'ubunutu'
       repo: 'https://github.com/NeuromaticSystems/ansible-ubuntu.git'
       playbooks:
-         - pip.yml
+         # ADD BACK BEFORE DOING FRESH INSTALL JUST DEBUGGING apt.yml- pip.yml
          - apt.yml
          - ssh-key.yml
          #- Development.yml
