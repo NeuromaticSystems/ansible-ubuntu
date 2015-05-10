@@ -3,76 +3,84 @@
 
   tasks:
  
-   - name: 'Add google dep keys'
-     action: apt_key url='https://dl.google.com/linux/linux_signing_key.pub' state=present
+    - name: 'Add google dep keys'
+      action: apt_key url='https://dl.google.com/linux/linux_signing_key.pub' state=present
 
    #- name: 'Add spotify dep keys'
    # action: apt_key url='hkp://keyserver.ubuntu.com:80' state=present id='94558F59'
 
-   - name: 'Add some depos'
-     action: apt_repository repo='{{item}}'
-     with_items:
-       - ppa:webupd8team/sublime-text-3
-       - ppa:webupd8team/themes
-       - ppa:linrunner/tlp
-       - ppa:mc3man/trusty-media
-       #- 'deb http://repository.spotify.com stable non-free'
+    - name: 'Add some depos'
+      action: apt_repository repo='{{item}}'
+      with_items:
+        - ppa:webupd8team/sublime-text-3
+        - ppa:webupd8team/themes
+        - ppa:linrunner/tlp
+        - ppa:mc3man/trusty-media
+        #- 'deb http://repository.spotify.com stable non-free'
        
-   - name: 'Updating apt caches'
-     action: apt update_cache=yes
+    - name: 'Updating apt caches'
+      action: apt update_cache=yes
      
-   - name: 'install programs apt'
-     action: apt name='curl'
+    - name: 'install programs apt'
+      action: apt name='curl'
      
-   - name: 'install programs from deb'
-     action: apt deb='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' state=present
-
-   - name: 'install programs from deb'
-     action: apt deb='https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb' state=present
-
-   - name: 'install programs apt'
-     action: apt name='{{item}}'
-     with_items:
-      - build-essential
-      - curl
-      - git-core
-      - sqlite3
-      - autoconf
-      - automake
-      - git
-      - aptitude
-      - vim
-      - vim-addon-manager
-      - vim-gnome
-      - vim-gtk
-      - vim-scripts
-      - vim-youcompleteme 
-      - thunar-vcs-plugin
-      - xfce4-clipman
-      - shiki-colors-xfwm-theme
-      - ubuntu-restricted-extras
-      - flashplugin-installer
-      - vlc
-      - libdvdread4       
-      - sublime-text-installer
-      - tlp
-      - tlp-rdw
-      #- spotify-client
-      - htop
-      - nmap
-      #- gitx
-      - libreoffice
-      - ffmpeg
+    - name: 'install programs apt'
+      action: apt name='{{item}}'
+      with_items:
+        - build-essential
+        - curl
+        - git-core
+        - sqlite3
+        - autoconf
+        - automake
+        - git
+        - aptitude
+        - vim
+        - vim-addon-manager
+        - vim-gnome
+        - vim-gtk
+        - vim-scripts
+        - vim-youcompleteme 
+        - thunar-vcs-plugin
+        - xfce4-clipman
+        - shiki-colors-xfwm-theme
+        - ubuntu-restricted-extras
+        - flashplugin-installer
+        - vlc
+        - libdvdread4       
+        - sublime-text-installer
+        - tlp
+        - tlp-rdw
+        #- spotify-client
+        - htop
+        - nmap
+        #- gitx
+        - libreoffice
+        - ffmpeg
     
+    - name: Download Google Chrome
+      get_url: 
+      url="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+      dest="/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb"
 
+    - name: Download Gooble Talk
+      get_url: 
+      url="https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb"
+      dest="/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb"
+
+    - name: 'install Chrome from deb'
+      action: apt deb='/home/{{ ansible_env.USER }}/Downloads/google-chrome-stable_current_amd64.deb' state=present
+
+    - name: 'install Talk from deb'
+      action: apt deb='/home/{{ ansible_env.USER }}/Downloads/google-talkplugin_current_amd64.deb' state=present
       
-   - name: 'Finish installing dcss'
-     sudo: yes
-     command: '/usr/share/doc/libdvdread4/install-css.sh'
+    - name: 'Finish installing dcss'
+      sudo: yes
+      command: '/usr/share/doc/libdvdread4/install-css.sh'
     
-   - name: 'Finish installing tlp'
-     sudo: yes
-     command: 'tlp start'
+    - name: 'Finish installing tlp'
+      sudo: yes
+      command: 'tlp start'
 
 
 # EOF ###########################################################
