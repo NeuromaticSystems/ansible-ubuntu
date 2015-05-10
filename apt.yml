@@ -1,7 +1,14 @@
 ---
 - hosts: workstation
- 
-  tasks:
+ -tasks
+   - name: 'Add some depos'
+     action: apt_repository: repo='{{item}}'
+     with_itmes:
+       - ppa:webupd8team/java
+       - ppa:webupd8team/sublime-text-3
+       - ppa:webupd8team/themes
+       - ppa:linrunner/tlp
+       
    - name: 'install programs'
      action: apt pkg={{item}} state=present
      with_items:
@@ -21,5 +28,15 @@
       - vim-youcompleteme 
       - thunar-vcs-plugin
       - xfce4-clipman
-      - shiki-colors-xfwm-theme 
+      - shiki-colors-xfwm-theme
+      - ubuntu-restricted-extras
+      - flashplugin-installer
+      - vlc
+      - libdvdread4       
+      - oracle-java8-installer
+      - sublime-text-installer
+      - tlp
+      - tlp-rdw
+      - spotify-client
       
+/usr/share/doc/libdvdread4/install-css.sh
