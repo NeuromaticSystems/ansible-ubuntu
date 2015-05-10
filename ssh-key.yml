@@ -12,7 +12,7 @@
       user: name=andor generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
     
     - name: Upload SSH Key
-      command: curl -u "brianchoate" --data '{"title":"`echo ${USER}@``hostname`","key":"cat ~/.ssh/id_rsa.pub"}' https://api.github.com/user/keys
+      command: curl -u "brianchoate" --data '{"title":"${HOSTNAME}","key":"`cat ~/.ssh/id_rsa.pub`"}' https://api.github.com/user/keys
 
 
 # EOF ############################################
