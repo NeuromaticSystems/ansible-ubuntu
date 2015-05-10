@@ -21,8 +21,11 @@
    - name: 'Updating apt caches'
      action: apt update_cache=yes
      
+   - name: 'install programs apt'
+     action: apt name='curl'
+     
    - name: 'install programs from deb'
-     action: apt deb={{item}} state=present
+     action: apt deb='{{item}}' state=present
      with_items:    
       - 'https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
       - 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
