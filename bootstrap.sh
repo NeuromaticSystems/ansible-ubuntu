@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y easy_install
+sudo apt-get install -y python-setuptools
 sudo sudo easy_install pip
 sudo pip install battleschool
 
