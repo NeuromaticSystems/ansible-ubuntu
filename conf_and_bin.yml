@@ -15,14 +15,14 @@
       action: git repo={{item.repo}} dest={{item.dest}} key_file=/home/andor/.ssh/id_rsa accept_hostkey=True
       sudo: no
       with_items:
-        - repo: ssh://git@github.com:brianchoate/conf.git
-          dest: /home/andor/Development/brianchoate/conf
-        - repo: ssh://git@github.com:brianchoate/bin.git
-          dest: /home/andor/Development/brianchoate/bin
-        - repo: ssh://git@github.com:NeuromaticSystems/ansible-ubuntu.git
-          dest: /home/andor/Development/NeuromaticSystems/ansible-ubuntu
-        - repo: ssh://git@github.com:NeuromaticSystems/ansible-osx.git
-          dest: /home/andor/Development/NeuromaticSystems/ansible-osx
+        #- repo: ssh://git@github.com:brianchoate/conf.git
+        #  dest: /home/andor/Development/brianchoate/conf
+        #- repo: ssh://git@github.com:brianchoate/bin.git
+        #  dest: /home/andor/Development/brianchoate/bin
+        #- repo: ssh://git@github.com:NeuromaticSystems/ansible-ubuntu.git
+        #  dest: /home/andor/Development/NeuromaticSystems/ansible-ubuntu
+        #- repo: ssh://git@github.com:NeuromaticSystems/ansible-osx.git
+        #  dest: /home/andor/Development/NeuromaticSystems/ansible-osx
         - repo: ssh://git@github.com:NeuromaticSystems/ansible-common.git
           dest: /home/andor/Development/NeuromaticSystems/ansible-common
         
