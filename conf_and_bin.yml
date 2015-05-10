@@ -1,0 +1,7 @@
+# Create ~/Development/brianchoate
+# Create ~/Development/NeuromaticSystmes
+
+# git clone bin
+# git clonse conf
+# ln -s bin conf vimrc gitconf ssh_conf
+
