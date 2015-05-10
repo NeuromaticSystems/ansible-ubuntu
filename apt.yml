@@ -12,7 +12,6 @@
    - name: 'Add some depos'
      action: apt_repository repo='{{item}}'
      with_items:
-       - ppa:webupd8team/java
        - ppa:webupd8team/sublime-text-3
        - ppa:webupd8team/themes
        - ppa:linrunner/tlp
@@ -43,7 +42,6 @@
       - flashplugin-installer
       - vlc
       - libdvdread4       
-      - oracle-java8-installer
       - sublime-text-installer
       - tlp
       - tlp-rdw
