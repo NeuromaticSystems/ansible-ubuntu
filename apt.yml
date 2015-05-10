@@ -6,8 +6,8 @@
    - name: 'Add google dep keys'
      action: apt_key url='https://dl.google.com/linux/linux_signing_key.pub' state=present
 
-   - name: 'Add spotify dep keys'
-     action: apt_key url='hkp://keyserver.ubuntu.com:80' state=present id='94558F59'
+   #- name: 'Add spotify dep keys'
+   # action: apt_key url='hkp://keyserver.ubuntu.com:80' state=present id='94558F59'
 
    - name: 'Add some depos'
      action: apt_repository repo='{{item}}'
@@ -46,14 +46,14 @@
       - sublime-text-installer
       - tlp
       - tlp-rdw
-      - spotify-client
+      #- spotify-client
       - htop
       - nmap
       - gitx
       - libreoffice
       - ffmpeg
-      #- 'https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
-      #- 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+      - 'https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb'
+      - 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
       
    - name: 'Finish installing dcss'
      sudo: yes
