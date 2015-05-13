@@ -22,6 +22,7 @@
           - thefuck
           - flake8
           - pythong
+          - pipsi
           #- Fabric
           #- Flask
           #- Jinja2
