@@ -50,6 +50,7 @@
         - sublime-text-installer
         - tlp
         - tlp-rdw
+        - libav-tools
         #- spotify-client
         - htop
         - nmap
